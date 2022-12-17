@@ -1,11 +1,7 @@
 name: Studio - Master build
 
 on:
-  push:
-    branches:
-      - "master"
-    paths-ignore:
-      - 'apps/sqltools/**'
+  workflow_dispatch: {}
 
 jobs:
   masterbuild:
