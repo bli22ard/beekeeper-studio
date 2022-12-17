@@ -551,6 +551,9 @@ export default Vue.extend({
           undefined;
 
         let headerTooltip = `${column.columnName} ${column.dataType}`
+        if(column.comment){
+          headerTooltip += ` [${column.comment}]`
+        }
         if (keyDatas && keyDatas.length > 0) {
           if (keyDatas.length === 1)
             headerTooltip += ` -> ${keyDatas[0].toTable}(${keyDatas[0].toColumn})`
@@ -559,6 +562,7 @@ export default Vue.extend({
         } else if (isPK) {
           headerTooltip += ' [Primary Key]'
         }
+        
 
         const result = {
           title: column.columnName,
